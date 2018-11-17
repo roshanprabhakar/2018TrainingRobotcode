@@ -9,7 +9,9 @@ import edu.wpi.first.wpilibj.command.Command;
  *
  */
 public class Climb extends Command {
-	private final int FINAL_TIME = 4;
+	private final int FINAL_TIME = 4; //change this after testing
+	private final int MAX_MOTOR_OUTPUT = 1; //do not change (0 - 1)
+	private final int OFF = 0; //do not change (0 - 1)
 	private Climber climber = Robot.getClimber();
 
 	public Climb() {
@@ -23,7 +25,7 @@ public class Climb extends Command {
 	// running the following two methods execute and isFinished in that order
 	@Override
 	protected void execute() {
-		climber.setMotorValues(1); // rpm from: 0 - 1
+		climber.setMotorValues(MAX_MOTOR_OUTPUT);
 	}
 
 	@Override
@@ -37,7 +39,7 @@ public class Climb extends Command {
 
 	@Override
 	protected void end() { // change 0 to value that keeps the robot suspended in place
-		climber.setMotorValues(0.4); // just stops motor like off switch
+		climber.setMotorValues(OFF); // just stops motor like off switch
 	}
 
 	@Override
