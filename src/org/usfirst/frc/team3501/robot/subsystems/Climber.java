@@ -10,10 +10,11 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class Climber extends Subsystem {
 	static Climber climber;
 	private WPI_TalonSRX ClimberTalon;
+	private final int PORT_NUM = 2; //change this according to which port the motor is connected to
 
 	private Climber() {
 		// MOTOR CONTROLLERS
-		this.ClimberTalon = new WPI_TalonSRX(2); // port number on electrical board
+		this.ClimberTalon = new WPI_TalonSRX(PORT_NUM); // port number on electrical board
 
 	}
 
